@@ -1,0 +1,110 @@
+.tab-content ul li{
+    list-style: none;
+    height: 28px;
+    line-height: 28px;
+    margin:10px 0px;
+
+}
+.tab-content ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffff;
+
+
+}
+.tab-content ul li .xkxq a {
+    color:#3491da;
+}
+ul.nav.nav-tabs li a{
+    font-size: 22px;
+    color:#ffffff;
+    /*padding: 10px 40px 5px 40px;*/
+}
+ul.nav.nav-tabs li a:hover{
+    background: #3491da;
+    border: none;
+}
+
+
+/*首页-我们的客户*/
+.our-client{
+    background-color: #e1e1e1;
+}
+.our-client-item{
+    overflow:hidden !important;
+}
+.our-client-item .our-client-logo{
+    text-align: center;
+    border: 1px solid #c1c1c1;
+    margin: 20px auto;
+    overflow: hidden;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.our-client-item .our-client-logo:hover{
+    background-color: #fafafa;
+    border:1px solid #0ba1e4;
+    box-shadow: 0 0 10px 0 rgba(45,183,245,.5);
+}
+.our-client-item .our-client-logo:hover img{
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none;
+}
+.our-client-item img{
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+@media (min-width: 768px){
+
+    ul.nav.nav-tabs li{
+        margin-top:0px;
+    }
+    .tab-content ul li a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #ffffff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    }
+
+}
+@media (max-width: 768px)  {
+    ul.nav.nav-tabs li{
+        margin-top:20px;
+    }
+    ul.nav.nav-tabs li a{
+        font-size: 16px;!important;
+        color:#ffffff;
+
+    }
+    .tab-content ul li a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #ffff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    }
+    .tab-content ul li{
+        list-style: none;
+        height: 20px;
+        line-height: 20px;
+        margin:10px 0px;
+
+    }
+}
