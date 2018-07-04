@@ -28,6 +28,7 @@
     <script src="pubilcJs/jqPaginator.min.js"></script>
     <script src="pubilcJs/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/product.js"></script>
+    <script src="pubilcJs/browser.min.js"></script>
 </head>
 <body>
 <style>
@@ -256,7 +257,35 @@
 
 
 </body>
-<script type="text/javascript">
+<script type="text/babel">
+    // 分页
+    function loadpage(myPageCount, myPageSize) {
+        var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount /
+            myPageSize);
+        $("#countindex").val(countindex);
+        $.jqPaginator('#pagination', {
+            totalPages: parseInt($("#countindex").val()),
+            visiblePages: parseInt($("#visiblePages").val()),
+            currentPage: 1,
+
+            first: '<li class="first"><a href="javascript:;">首页</a></li>',
+            prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
+            next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
+            last: '<li class="last"><a href="javascript:;">末页</a></li>',
+            page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+            onPageChange: function (num, type) {
+                if (type == "change") {
+                    exeData(num, type, myPageCount, myPageSize);
+                }
+            }
+        });
+    }
+
+    function exeData(num, type, myPageCount, myPageSize) {
+        loadpage(myPageCount, myPageSize);
+        page(num);
+        //后续肯定还有数据展示的js 这里只是简单的演示
+    }
     function page(page=1,isFirst = true) {
         var url = "http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/article/index";
         let type = window.sessionStorage.getItem("type");
@@ -319,7 +348,7 @@
                                 console.log(data,333)
 
                                 var res = (res.data.hot_message);
-                                window.sessionStorage.setItem("dataRm",JSON.stringify(res))
+                                window.sessionStorage.setItem("dataRm",JSON.stringify(res));
                                 window.sessionStorage.setItem("data",JSON.stringify(data[0]));
                                 window.location.href="IndustryInformation.html";
 
@@ -373,35 +402,8 @@
     })
 
 </script>
-<script>
+<script >
 
-    // 分页
-    function loadpage(myPageCount, myPageSize) {
-        var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount /
-            myPageSize);
-        $("#countindex").val(countindex);
-        $.jqPaginator('#pagination', {
-            totalPages: parseInt($("#countindex").val()),
-            visiblePages: parseInt($("#visiblePages").val()),
-            currentPage: 1,
 
-            first: '<li class="first"><a href="javascript:;">首页</a></li>',
-            prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
-            next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
-            last: '<li class="last"><a href="javascript:;">末页</a></li>',
-            page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
-            onPageChange: function (num, type) {
-                if (type == "change") {
-                    exeData(num, type, myPageCount, myPageSize);
-                }
-            }
-        });
-    }
-
-    function exeData(num, type, myPageCount, myPageSize) {
-        loadpage(myPageCount, myPageSize);
-        page(num);
-        //后续肯定还有数据展示的js 这里只是简单的演示
-    }
 </script>
 </html>

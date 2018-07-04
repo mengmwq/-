@@ -38,14 +38,10 @@ var questionController = function () {
                 var data1 = (res.data.info[0]);
                 var r = (res.data.honor);
                 var s = res.data.xbcl;
-                // var t =s[0].type;
-                //console.log(t,8)
-                // window.sessionStorage.setItem("t1",t);
+
 
                 var p = res.data.xbcn;
-                // var t2 = p[0].type;
-                // console.log(t2);
-                // window.sessionStorage.setItem("t2",t2);
+
 
 
 

@@ -40,11 +40,9 @@ var questionController = function() {
 
         `<span>时间：${data.time}</span>`,
         `</div>`,
-       `<div class="col-md-12 " style="margin:20px 0px 0px 0px;padding: 0px;">`,
-           ` <img src="${data.picture}" alt="" class="img-responsive">`,
-            `</div>`,
+
             `<div class="col-md-12 col-xs-12" style="margin:20px 0px 30px 0px;padding: 0px;">`,
-           `<p>${data.content}</p>`,
+           `<p style="overflow: hidden">${data.content}</p>`,
         `</div>`
 
 

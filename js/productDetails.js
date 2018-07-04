@@ -32,9 +32,8 @@ var questionController = function() {
                 var data = res.data.right;
                 var tArr =[];
                 var dataArr =[],
-                    dataBrr = [];
-                dataCrr = [];
-                dataArr2 = [];
+                    dataBrr = [],
+                    dataArr2 = [];
                 tArr.push(
                     `<h4 style="font-weight: 800; font-size: 18px;margin:15px 0px;" data_details1 ="${data[0].type}">
                       ${data[0].type}

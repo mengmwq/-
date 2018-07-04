@@ -25,11 +25,10 @@ var questionController = function() {
                 id:wyid
             },
             success:function(res){
-                var p = res.data.info[0];
-                console.log(p,9)
-                dataBrr = [];
+                var p = res.data.info[0],
+
+                dataBrr = [],
                 dataCrr = [];
-                dataArr2 = []
                 dataBrr.push(
                `<div  style="padding: 10px 0px;font-size: 22px;color: #ffffff;">${p.job}</div>`,
                 `<div class="" style="color: #ffffff;padding: 20px 0px">${p.pag}</div>`,

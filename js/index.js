@@ -46,6 +46,7 @@ var questionController  = function () {
 
 
 
+
     this.navBannerImage = function () {
         var url = "http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/";
         $.ajax({
@@ -53,6 +54,7 @@ var questionController  = function () {
             type: "post",
             dataType: "JSON",
             success: function (data) {
+                console.log(data,88)
                 var lunboArr = [];
                 $.each(data.data.banner, function (ind, key) {
                     lunboArr.push(
@@ -64,13 +66,15 @@ var questionController  = function () {
 
                 //产品列表的渲染
                 var data2 = (data.data.product);
+
                 var dateArr1 = [];
 
                 $.each(data2, function (ind, key) {
                     var picture = key.picture;
 
+
                     dateArr1.push(
-                    `<div id="dok"><img src="${picture}" alt="" class="img-responsive" style="width: 180px;"><p  style="text-align: center;!important;background-color: #ffffff;margin-top: 0px;width:180px;">${key.title}</p></div>`,
+                    `<div id="dok"><a href="${key.link}"><img src="${picture}" alt="" class="img-responsive" style="width: 180px;"><p  style="text-align: center;!important;background-color: #ffffff;margin-top: 0px;width:180px;">${key.title}</p></a></div>`
 
                     )
 
@@ -99,7 +103,7 @@ var questionController  = function () {
                 $.each(a, function (ind, key) {
                     var picture = key.picture;
                     dateArr.push(
-                        ' <div class="col-xs-4 col-sm-4 col-md-2  col-lg-2 our-client-item" style="">',
+                        ' <div class="col-xs-6 col-sm-4 col-md-2  col-lg-2 our-client-item" style="">',
                         '<div class="our-client-logo">',
                         '<img  class="img-responsive center-block" src="' + picture + '" alt="" class="img-responsive">',
                         '</div>',
@@ -126,12 +130,9 @@ var questionController  = function () {
 
                 })
 
-
                 $(document).delegate("#zxzx a","mouseover",function () {
 
-
                    box()
-
 
                 })
                 $(document).delegate("#hydt a","mouseover",function () {
@@ -167,10 +168,6 @@ var questionController  = function () {
 
                 })
 
-
-
-
-
             },
             error: function () {
                 alert("网络很慢请稍后重试！")
@@ -178,8 +175,6 @@ var questionController  = function () {
         });
     }
     this.initXr = function(){
-
-
         box();
     }
 

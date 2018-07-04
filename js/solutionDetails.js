@@ -32,15 +32,12 @@ var questionController = function() {
                 //console.log(p,9)
                 var data = res.data.right;
                 console.log(data,999)
-                var dataArr =[],
-                    dataBrr = [];
-                dataCrr = [];
-                dataArr2 = [];
-                tArr =[];
+                let dataArr =[],
+                    dataBrr = [],
+                    dataCrr = [],
+                    tArr =[];
                 tArr.push(
-                    `<h4 style="font-weight: 800; font-size: 18px;margin:15px 0px;" data_details1 ="${data[0].type}">
-                      ${data[0].type}
-                    </h4>`
+                    `<h4 style="font-weight: 800; font-size: 18px;margin:15px 0px;" data_details1 ="${data[0].type}">${data[0].type}</h4>`
                 )
                 $("#title").html(tArr.join(''))
                 var type =(data[0].type)

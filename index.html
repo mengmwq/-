@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <!-- 目前仅限360急速浏览 webkit:急速  ie-comp:ie兼容模式   ie-stand: ie标准模式 -->
     <title>北京精新相能科技有限公司(主营高中低温相变储能材料)</title>
-    <meta name="keywords" content="精新相能公司官网">
+    <meta name="keywords" content="中国冷链智能温控解决方案专家">
     <meta name="description" content="精新相能公司官网">
     <!-- Bootstrap中文字体版 -->
 
@@ -34,10 +34,15 @@
 
 
 </head>
-<body>
+<body id="page-top " class="is-loading">
+<div class="curtain">
+    <div class="loader">
+    </div>
+</div>
 
 
 <style>
+
     .nav-tabs {
         border-bottom: 1px solid #3491da;
     }
@@ -96,7 +101,7 @@
     #message {
         background: url("img/r.jpg") repeat;
         width: 100%;
-        min-height: 347px;
+        min-height: 400px;
 
     }
     .slick-prev {
@@ -232,10 +237,10 @@
             </div>
         </div>
         <!--合作伙伴-->
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: #e8e8e8;">
             <div class="container" style="margin-top:32px;margin-bottom: 32px;">
                 <p style="font-size: 28px;color: #000000;font-family: monospace;">合作伙伴</p>
-                <div id="Parents">
+                <div id="Parents" >
 
                 </div>
             </div>
@@ -361,10 +366,13 @@
 <script src="pubilcJs/swiper.min.js"></script>
 <script src="pubilcJs/bootstrap/js/bootstrap.min.js"></script>
 <script src="pubilcJs/common.js"></script>
+<script src="pubilcJs/browser.min.js"></script>
 
 
-<script src="js/index.js"></script>
+<script src="js/index.js" type="text/babel"></script>
 <script type="text/javascript">
-
+    window.onload=function(){
+        $('body').removeClass('is-loading');
+    }
 </script>
 </html>
